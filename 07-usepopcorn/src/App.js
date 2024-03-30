@@ -57,9 +57,10 @@ export default function App() {
   const [movies, setMovies] = useState([]);
   const [watched, setWatched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const tempQuery= "interstellar";
 
+  /*
   useEffect(function() {
     console.log("After initial render");
   }, []);
@@ -75,16 +76,20 @@ export default function App() {
     },
     [query]
   )
+  */
 
   console.log("During Render");
 
 
   useEffect(function () {
     async function fetchMovies() {
-      try {setIsLoading(true);
-      const res = await fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=${tempQuery}`);
+      try {
+      setIsLoading(true);
+      setError("");
 
-      if(!res.ok) throw new Error("Something went wrong with fetching movies")
+      const res = await fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=${query}`);
+
+      if (!res.ok) throw new Error("Something went wrong with fetching movies")
   
       const data = await res.json();
       if (data.Response === "False") throw new Error("Movie not found");
@@ -97,8 +102,14 @@ export default function App() {
         setIsLoading(false);
       }
     }
+
+    if(query.length < 3) {
+      setMovies([]);
+      setError("");
+      return;
+    }
     fetchMovies();
-  }, []);
+  }, [query]);
   
   
 
@@ -122,7 +133,7 @@ export default function App() {
           {/* {isLoading ? <Loader /> : <MovieList movies ={movies} />}
           <MovieList movies={movies} /> */}
           {isLoading && <Loader />}
-          {isLoading && !error && <MovieList movies ={movies} />}
+          {!isLoading && !error && <MovieList movies = {movies} />}
           {error && <ErrorMessage message ={error} />}
         </Box>
 
