@@ -113,7 +113,7 @@ export default function App() {
       if (data.Response === "False") throw new Error("Movie not found");
 
       setMovies(data.Search);
-      console.log(data.Search);
+      // console.log(data.Search);
       } catch (err) {
         console.error(err.message);
         setError(err.message);
@@ -315,6 +315,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
 
   const {Title: title, Year: year, Poster: poster, Runtime: runtime, imdbRating, Plot: plot, Released: released, Actors: actors, Director: director, Genre: genre,} = movie;
 
+  console.log(`title`);
   function handleAdd() {
     const newWatchedMovie = {
       imdbID: selectedId, title, year, poster,
@@ -337,6 +338,11 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     }
     getMovieDetails();
   }, [selectedId]);
+
+  useEffect(function() {
+    if (!title) return;
+    document.title = `Movie | ${title}`;
+  }, [title]);
 
   return (
     <div className="details">
