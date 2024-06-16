@@ -174,7 +174,7 @@ function Search({query, setQuery}) {
     // console.log(inputEl.current);
     return () => document.addEventListener("keydown", callback)
     
-  }, []);
+  }, [setQuery]);
 
   // useEffect(function() {
   //   const el = document.querySelector(".search");
