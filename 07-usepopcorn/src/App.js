@@ -1,5 +1,6 @@
 import {useEffect, useState, useRef } from "react";
 import StarRating from "./StarRating";
+import { use}
 import { useMovies } from "./useMovies";
 import { useLocalStorageState } from "./useLocalStorageState";
 
@@ -292,7 +293,8 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   // 
 } // Average Rating
 
-  
+useKey()
+
   useEffect(function () {
     function callback (e) {
       if (e.code === "Escape") {
