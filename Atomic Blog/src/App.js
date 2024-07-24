@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { faker } from "@faker-js/faker";
 
 function createRandomPost() {
   return {
-    title: `${faker.hacker.adjective()} ${faker.hacker.noun()}`,
+    title: `${faker.hacker.adjective()} ${faker.hacker.noun()}, ${faker.hacker.verb()}`,
     body: faker.hacker.phrase(),
   };
 }
+
+// 1) CREATE A CONTEXT
+const PostContext = createContext();
 
 function App() {
   const [posts, setPosts] = useState(() =>
@@ -42,6 +45,14 @@ function App() {
   );
 
   return (
+    // 2) PROVIDE VALUE TO COMPONENTS
+    <PostContext.Provider VALUE={{
+      posts: searchedPosts,
+      onClearPost: handleAddPost,
+      onClearPosts: handleClearPosts,
+      searchQuery,
+      setSearchQuery,
+    }}>
     <section>
       <button
         onClick={() => setIsFakeDark((isFakeDark) => !isFakeDark)}
@@ -60,6 +71,7 @@ function App() {
       <Archive onAddPost={handleAddPost} />
       <Footer />
     </section>
+    </PostContext.Provider>
   );
 }
 
@@ -158,7 +170,7 @@ function Archive({ onAddPost }) {
   // Here we don't need the setter function. We're only using state to store these posts because the callback function passed into useState (which generates the posts) is only called once, on the initial render. So we use this trick as an optimization technique, because if we just used a regular variable, these posts would be re-created on every render. We could also move the posts outside the components, but I wanted to show you this trick 😉
   const [posts] = useState(() =>
     // 💥 WARNING: This might make your computer slow! Try a smaller `length` first
-    Array.from({ length: 10000 }, () => createRandomPost())
+    Array.from({ length: 100 }, () => createRandomPost())
   );
 
   const [showArchive, setShowArchive] = useState(false);
