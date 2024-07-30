@@ -1,7 +1,8 @@
 // "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
 
 import { useEffect, useState } from "react";
-import DatePicker from "react-datepicker"
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 import styles from "./Form.module.css";
 import Button from "./Button";
@@ -74,6 +75,14 @@ function Form() {
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    if (!cityName || !date) return;
+
+    const newCity = {
+      cityName, country, emoji, date, notes, position: { lat, lng },
+    };
+
+    console.log(newCity);
   }
 
   if (isLoadingGeocoding) return <Spinner />
@@ -101,7 +110,7 @@ function Form() {
           onChange={(e) => setDate(e.target.value)}
           value={date}
         /> */}
-        <DatePicker />
+        <DatePicker id="date" onChange={(date) => setDate(date)} selected={date} dateFormat="dd/MM/yyyy" />
       </div>
 
       <div className={styles.row}>
