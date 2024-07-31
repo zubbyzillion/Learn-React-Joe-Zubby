@@ -57,6 +57,50 @@
         "lng": "-4.218750000000001"
       },
       "id": 98443198
+    },
+    {
+      "cityName": "Idemili South",
+      "country": "Nigeria",
+      "emoji": {
+        "type": "img",
+        "key": null,
+        "ref": null,
+        "props": {
+          "src": "https://flagcdn.com/24x18/ng.png",
+          "alt": "flag"
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "date": "2024-07-31T11:09:28.146Z",
+      "notes": "Yippe!",
+      "position": {
+        "lat": "6.053161295714067",
+        "lng": "6.943359375000001"
+      },
+      "id": 98443199
+    },
+    {
+      "cityName": "Fabara",
+      "country": "Spain",
+      "emoji": {
+        "type": "img",
+        "key": null,
+        "ref": null,
+        "props": {
+          "src": "https://flagcdn.com/24x18/es.png",
+          "alt": "flag"
+        },
+        "_owner": null,
+        "_store": {}
+      },
+      "date": "2024-07-31T11:45:26.677Z",
+      "notes": "Testing",
+      "position": {
+        "lat": "41.21172151054787",
+        "lng": "0.17578125"
+      },
+      "id": 98443200
     }
   ]
 }
