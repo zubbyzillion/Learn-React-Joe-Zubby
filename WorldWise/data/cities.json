@@ -37,28 +37,6 @@
       "id": 98443197
     },
     {
-      "cityName": "Gerindote",
-      "country": "Spain",
-      "emoji": {
-        "type": "img",
-        "key": null,
-        "ref": null,
-        "props": {
-          "src": "https://flagcdn.com/24x18/es.png",
-          "alt": "flag"
-        },
-        "_owner": null,
-        "_store": {}
-      },
-      "date": "2024-07-31T10:58:29.469Z",
-      "notes": "",
-      "position": {
-        "lat": "39.926588421909436",
-        "lng": "-4.218750000000001"
-      },
-      "id": 98443198
-    },
-    {
       "cityName": "Idemili South",
       "country": "Nigeria",
       "emoji": {
@@ -79,28 +57,6 @@
         "lng": "6.943359375000001"
       },
       "id": 98443199
-    },
-    {
-      "cityName": "Fabara",
-      "country": "Spain",
-      "emoji": {
-        "type": "img",
-        "key": null,
-        "ref": null,
-        "props": {
-          "src": "https://flagcdn.com/24x18/es.png",
-          "alt": "flag"
-        },
-        "_owner": null,
-        "_store": {}
-      },
-      "date": "2024-07-31T11:45:26.677Z",
-      "notes": "Testing",
-      "position": {
-        "lat": "41.21172151054787",
-        "lng": "0.17578125"
-      },
-      "id": 98443200
     }
   ]
 }
