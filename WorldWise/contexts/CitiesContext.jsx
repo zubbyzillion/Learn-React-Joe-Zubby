@@ -7,8 +7,8 @@ const CitiesContext = createContext();
 const initialState = {
   cities: [],
   isLoading: false,
-  curentCity: {},
-  error: {},
+  currentCity: {},
+  error: "",
 }
 
 function reducer(state, action) {
@@ -54,7 +54,7 @@ function reducer(state, action) {
 }
 
 function CitiesProvider({ children }) {
-  const [{ cities, isLoading, currentCity, dispatch, error }] = useReducer(reducer, initialState);
+  const [{ cities, isLoading, currentCity, error}, dispatch ] = useReducer(reducer, initialState);
 
   // const [cities, setCities] = useState([]);
   // const [isLoading, setIsLoading] =useState(false);
