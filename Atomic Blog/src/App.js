@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { faker } from "@faker-js/faker";
 import {PostProvider, usePosts } from "./PostContext";
 
@@ -11,8 +11,6 @@ function createRandomPost() {
 
 
 function App() {
-  const x = usePosts();
-  console.log(x);
   // Whenever `isFakeDark` changes, we toggle the `fake-dark-mode` class on the HTML element (see in "Elements" dev tool).
   const [isFakeDark, setIsFakeDark] = useState(false);
 
@@ -44,7 +42,7 @@ function App() {
 
 function Header() {
   // 3) CONSUMING CONTEXT VALUE
-  const { onClearPosts} = usePosts();
+  const { onClearPosts } = usePosts();
   
   return (
     <header>

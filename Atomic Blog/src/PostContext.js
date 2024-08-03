@@ -40,7 +40,7 @@ function PostProvider({ children }) {
         // 2) PROVIDE VALUE TO COMPONENTS
         <PostContext.Provider value={{
             posts: searchedPosts,
-            onClearPost: handleAddPost,
+            onAddPost: handleAddPost,
             onClearPosts: handleClearPosts,
             searchQuery,
             setSearchQuery,
@@ -52,7 +52,7 @@ function PostProvider({ children }) {
 
 function usePosts() {
     const context = useContext(PostContext);
-    if (context=== undefined)
+    if (context === undefined)
         throw new Error("PostContext was used outside of the PostProvider");
     return context;
 }

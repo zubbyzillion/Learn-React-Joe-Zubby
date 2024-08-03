@@ -48,7 +48,7 @@ function App() {
     // 2) PROVIDE VALUE TO COMPONENTS
     <PostContext.Provider value={{
       posts: searchedPosts,
-      onClearPost: handleAddPost,
+      onAddPost: handleAddPost,
       onClearPosts: handleClearPosts,
       searchQuery,
       setSearchQuery,
