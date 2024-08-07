@@ -57,6 +57,27 @@
         "lng": "6.943359375000001"
       },
       "id": 98443199
+    },
+    {
+      "cityName": "Higueruela",
+      "country": "Spain",
+      "emoji": {
+        "type": "img",
+        "key": null,
+        "ref": null,
+        "props": {
+          "src": "https://flagcdn.com/24x18/es.png",
+          "alt": "flag"
+        },
+        "_owner": null
+      },
+      "date": "2024-08-07T01:44:05.287Z",
+      "notes": "It was an amazing experience 😇",
+      "position": {
+        "lat": "39.01918369029137",
+        "lng": "-1.5051269531250002"
+      },
+      "id": 98443200
     }
   ]
 }
