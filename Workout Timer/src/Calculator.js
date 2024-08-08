@@ -30,7 +30,7 @@ function Calculator({ workouts, allowSound }) {
   }, [duration, allowSound]);
 
   useEffect(function () {
-    console.log(duration, sets)
+    // console.log(duration, sets)
     document.title= `Your ${number}-exercise workout`;
   }, [number, duration, sets]);
 
