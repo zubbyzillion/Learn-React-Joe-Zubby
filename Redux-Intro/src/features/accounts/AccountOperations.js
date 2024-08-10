@@ -20,8 +20,9 @@ function AccountOperations() {
   function handleDeposit() {
     if(!depositAmount) return;
 
-    dispatch(deposit(depositAmount));
+    dispatch(deposit(depositAmount, currency));
     setDepositAmount("");
+    setCurrency("");
   }
 
   function handleWithdrawal() {
@@ -61,6 +62,7 @@ function AccountOperations() {
             <option value="USD">US Dollar</option>
             <option value="EUR">Euro</option>
             <option value="GBP">British Pound</option>
+            <option value="NGN">Nigerian Naira</option>
           </select>
 
           <button onClick={handleDeposit}>Deposit {depositAmount}</button>
