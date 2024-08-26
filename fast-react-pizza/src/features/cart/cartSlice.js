@@ -9,7 +9,7 @@ const initialState = {
             name: "Mediterranean",
             quantity: 2,
             unitPrice: 16,
-            totalPrice: quantity * unitPrice,
+            totalPrice: `quantity * unitPrice`,
         },
     ],
 };
