@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import LinkButton from '../../ui/LinkButton';
 import Button from '../../ui/Button';
 import CartItem from './CartItem';
@@ -22,7 +21,7 @@ function Cart() {
 
       <ul className="divide-y divide-stone-200 border-b mt-3">
         {cart.map((item) => (
-          <CartItem item ={item} key={item.id} />
+          <CartItem item ={item} key={item.pizzaId} />
         ))}
       </ul>
 
