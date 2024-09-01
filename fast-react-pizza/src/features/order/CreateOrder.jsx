@@ -57,10 +57,10 @@ function CreateOrder() {
           <div className="grow">
             <input className="input w-full"
              type="text" name="address" disabled={isLoadingAddress} defaultValue={address} required />
-             {addressStatus === "error" && <p className="text-xs mt-2 text-red-700 bg-red-100 p-2 rounded-md">{errorAddress}</p>}
+             {addressStatus === "error" && (<p className="text-xs mt-2 text-red-700 bg-red-100 p-2 rounded-md">{errorAddress}</p>)}
           </div>
           
-          {!position.latitude && !position.longitude (
+          {!position.latitude && !position.longitude && (
             <span className="absolute right-[3px] top-[3px] z-50 md:right-[5px] md:top-[5px]">
             <Button disabled={isLoadingAddress} type="small" onClick={(e) => {
               e.preventDefault();
@@ -107,6 +107,8 @@ export async function action({ request }) {
     cart: JSON.parse(data.cart),
     priority: data.priority === "true",
   };
+
+  console.log(order);
 
   const errors = {}
   if (!isValidPhone(order.phone)) 
